@@ -1,0 +1,71 @@
+<html>
+    <head>
+<style>
+    table,th,tr,td
+    {
+        border: 2px solid black;
+            }
+        th,td,tr
+        {
+        padding: 15px;
+        min-height: fit-content;
+        min-width: fit-content;
+        }
+        
+</style>
+    </head>
+    <body>
+        <script>
+           function add()
+           {
+            var table = document.getElementById("myid");
+            var sa = table.insertRow(+1);
+            var sb = sa.insertCell(0);
+            var sc = sa.insertCell(1);
+            var checkbox = document.createElement("input");
+            checkbox.type="checkbox";
+            checkbox.name="chk";
+            sb.innerHTML = prompt("enter the student name",);
+            sc.innerHTML = prompt("enter the id",);
+            sa.appendChild(checkbox);
+           }
+           function remove() 
+    {
+            var table = document.getElementById("myid");
+                document.getElementById("myid").deleteRow(prompt("enter the row you want to delete",));
+    }
+            function validate()
+            {
+                if(sb==sc)
+                {
+                    var table = document.getElementById("myid");
+                document.getElementById("myid").deleteRow(prompt("enter the row you want to delete",));
+                }
+            }
+        </script>
+        <table id="myid">
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    id
+                </th>
+                <th>
+                    checkbox<input type="checkbox" name="chk">
+                </th>
+            </tr>
+        </table>
+        <div class="buttons">
+            <button type="button" onclick="add()">
+            Add
+            </button>
+            <button type="button" onclick="remove('myid')">
+                Delete
+            </button>
+            <button type="button" onclick="validate()">
+                Validate
+            </button>
+
+    </body>
+</html>
