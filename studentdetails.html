@@ -22,28 +22,34 @@
             var sa = table.insertRow(+1);
             var sb = sa.insertCell(0);
             var sc = sa.insertCell(1);
-            var checkbox = document.createElement("input");
-            checkbox.type="checkbox";
-            checkbox.name="chk";
+            //var checkbox = document.createElement("input");
+            //checkbox.type="checkbox";
+            //checkbox.name="chk";
             sb.innerHTML = prompt("enter the student name",);
             sc.innerHTML = prompt("enter the id",);
-            sa.appendChild(checkbox);
-           }
+            //sa.appendChild(checkbox);
+        }
+
            function remove() 
     {
             var table = document.getElementById("myid");
                 document.getElementById("myid").deleteRow(prompt("enter the row you want to delete",));
     }
-            function validate()
+    function validate()
             {
-                if(sb==sc)
+            var table = document.getElementById("myid");
+                if(table.cells [1]==table.cells[2])
                 {
-                    var table = document.getElementById("myid");
-                document.getElementById("myid").deleteRow(prompt("enter the row you want to delete",));
+                    console.log("inside if loop")
                 }
-            }
+                else
+                {
+                    console.log("inside else loop")
+                }
+            }   
+            
         </script>
-        <table id="myid">
+        <table id="myid" class="myRow">
             <tr>
                 <th>
                     Name
@@ -51,9 +57,9 @@
                 <th>
                     id
                 </th>
-                <th>
+                <!-- <th>
                     checkbox<input type="checkbox" name="chk">
-                </th>
+                </th> -->
             </tr>
         </table>
         <div class="buttons">
