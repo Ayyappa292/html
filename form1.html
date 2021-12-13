@@ -26,8 +26,6 @@ p,h2
     width: 50%;
 }
         </style>
-    <!-- for the jquery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
         //    this function is used for Validation of full name 
            function fullname(){
@@ -72,26 +70,6 @@ p,h2
             localStorage.setItem("no",no);
             nopattern.test(no)?document.getElementById("no").style.backgroundColor='white':document.getElementById("no").style.backgroundColor='red'
             }
-            // //jquery for hiding and showing the form
-           
-                $(document).ready(function(){
-                $("#submit").click(function(){
-                $("#1").hide();
-                $("#2").show();
-                });
-                $("#back").click(function(){
-                $("#2").hide();
-                $("#1").show();
-                });
-                });
-                // this function is to show the entered data in table
-            function show(){
-            document.getElementById("display1").innerHTML=document.getElementById("name").value;
-            document.getElementById("display2").innerHTML=document.getElementById("uname").value;
-            document.getElementById("display3").innerHTML=document.getElementById("email").value;
-            document.getElementById("display4").innerHTML=document.getElementById("pass").value;
-            document.getElementById("display5").innerHTML=document.getElementById("no").value;
-            }
         </script>
     </head>
 <body>
@@ -125,56 +103,7 @@ p,h2
         </td>
         </tr>
       </table>
-       <button type="button" id="submit" onclick="show()">Submit</a></button>
+       <button type="button" id="submit"><a href="aftersubmit1.html">Submit</a></button>
     </div>
-             
-       <div id="2" style="display: none;">
-        <h1 align="center">
-            Your details are as follows
-        </h1>
-        <table id="table2" align="center" cellpadding="15px" cellspacing="5px">
-           <tr class="tr1">
-               <th class="th1">
-                   Full Name
-               </th>
-                <td id="display1" class="td1">
-
-                </td>
-           </tr>
-           <tr class="tr1">
-            <th class="th1">
-                UserName
-            </th>
-             <td id="display2" class="td1">
-
-             </td>
-        </tr>
-        <tr class="tr1">
-            <th class="th1">
-                Emailid
-            </th>
-             <td id="display3" class="td1">
-
-             </td>
-        </tr>
-        <tr class="tr1">
-            <th class="th1">
-                Password
-            </th>
-             <td id="display4" class="td1">
-</td>
-        </tr>
-        <tr class="tr1">
-            <th class="th1">
-                number
-            </th>
-             <td id="display5" class="td1">
-
-             </td>
-        </tr>
-       </table>
-       <button type="button" id="back">Back</a></button>
-       </div>
-      
 </body>
 </html>

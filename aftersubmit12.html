@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <style>
+            div
+                    {
+                        margin:auto;
+                        width: 40%;
+                        padding: 5px;
+                        height: 50%;
+                    
+                    }
+            table,th,td,tr
+            {
+                padding: 20px;
+                width: 40%;
+                border: 2px solid black;
+                align-items: center;
+            } 
+            </style>
+    </head>
+    <body>
+        
+        <div id="show">
+            <h1 align="center">
+                Your details are as follows
+            </h1>
+            <table>
+               <tr>
+                   <th>
+                       Full Name
+                   </th>
+                    <td id="dispay1">
+    
+                    </td>
+               </tr>
+               <tr>
+                <th>
+                    UserName
+                </th>
+                 <td id="dispay2">
+    
+                 </td>
+            </tr>
+            <tr>
+                <th>
+                    Emailid
+                </th>
+                 <td id="dispay3">
+    
+                 </td>
+            </tr>
+            <tr>
+                <th>
+                    Password
+                </th>
+                 <td id="dispay4">
+    
+                 </td>
+            </tr>
+            <tr>
+                <th>
+                    number
+                </th>
+                 <td id="dispay5">
+    
+                 </td>
+            </tr>
+           </table>
+           </div>
+            <script>
+            document.getElementById("display1").innerHTML=localStorage.getItem("name");
+            document.getElementById("display2").innerHTML=localStorage.getItem("uname");
+            document.getElementById("display3").innerHTML=localStorage.getItem("email");
+            document.getElementById("display4").innerHTML=localStorage.getItem("pass");
+            document.getElementById("display5").innerHTML=localStorage.getItem("no");
+            </script>
+          
+
+    </body>
+</html>

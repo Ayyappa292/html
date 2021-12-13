@@ -1,0 +1,35 @@
+<html>
+    <head>
+
+
+    </head>
+    <body>
+        <h1 align="center">
+            Your details are as follows
+        </h1>
+        <p id="display1">
+your name is :
+        </p>
+        <p id="display2">
+            your user name :
+                    </p>
+                    <p id="display3">
+                        your email :
+                                </p>
+                                <p id="display4">
+                                    your pass :
+                                            </p><p id="display5">
+                                                your no :
+                                                        </p>
+        <script>
+  
+        document.getElementById("display1").innerHTML=localStorage.getItem("name");
+        document.getElementById("display2").innerHTML=localStorage.getItem("uname");
+        document.getElementById("display3").innerHTML=localStorage.getItem("email");
+        document.getElementById("display4").innerHTML=localStorage.getItem("pass");
+        document.getElementById("display5").innerHTML=localStorage.getItem("no");
+        </script>
+      
+
+    </body>
+</html>
