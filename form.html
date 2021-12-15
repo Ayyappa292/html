@@ -33,16 +33,13 @@ p,h2
            function fullname(){
             var name=document.getElementById("name").value;
 	        var namepattern=/^[A-Z][A-Z\s]*$/;
-            localStorage.setItem("name",name);
             namepattern.test(name)?document.getElementById("name").style.backgroundColor='white':document.getElementById("name").style.backgroundColor='red'
-	        }
-            
+           }
             //    this function is used for Validation of username 
             function username()
             {
             var uname=document.getElementById("uname").value;
             var unamepattern=/^[a-zA-Z0-9_]{3,15}$/;
-            localStorage.setItem("uname",uname);
             unamepattern.test(uname)?document.getElementById("uname").style.backgroundColor='white':document.getElementById("uname").style.backgroundColor='red'
 	        }
 
@@ -51,39 +48,22 @@ p,h2
             {
             var email=document.getElementById("email").value;
             var emailpattern=/^([A-Za-z0-9_\-\.])+\@([gmail|GMAIL])+\.(com)$/;
-            localStorage.setItem("email",email);
             emailpattern.test(email)?document.getElementById("email").style.backgroundColor='white':document.getElementById("email").style.backgroundColor='red'
             }
-
         //    this function is used for Validation of password
             function password()
             {
             var pass=document.getElementById("pass").value;
             var passpattern=/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
-            localStorage.setItem("pass",pass);
             passpattern.test(pass)?document.getElementById("pass").style.backgroundColor='white':document.getElementById("pass").style.backgroundColor='red'
             }
-
             //    this function is used for Validation of mobile number
             function number()
             {
             var no=document.getElementById("no").value;
             var nopattern=/^[0-9]{10}$/;
-            localStorage.setItem("no",no);
             nopattern.test(no)?document.getElementById("no").style.backgroundColor='white':document.getElementById("no").style.backgroundColor='red'
             }
-            // //jquery for hiding and showing the form
-           
-                $(document).ready(function(){
-                $("#submit").click(function(){
-                $("#1").hide();
-                $("#2").show();
-                });
-                $("#back").click(function(){
-                $("#2").hide();
-                $("#1").show();
-                });
-                });
                 // this function is to show the entered data in table
             function show(){
             document.getElementById("display1").innerHTML=document.getElementById("name").value;
@@ -91,7 +71,37 @@ p,h2
             document.getElementById("display3").innerHTML=document.getElementById("email").value;
             document.getElementById("display4").innerHTML=document.getElementById("pass").value;
             document.getElementById("display5").innerHTML=document.getElementById("no").value;
+            var name=document.getElementById("name").value;
+            var uname=document.getElementById("uname").value;
+            var email=document.getElementById("email").value;
+            var pass=document.getElementById("pass").value;
+            var no=document.getElementById("no").value;
+            if(name==""||uname==""||email==""||pass==""||no=="")
+            {
+                alert("please enter all the details");
             }
+            $(document).ready(function(){
+                $("#submit").click(function(){
+                $("#1").fadeOut(1000);
+                $("#2").fadeIn(5000);
+                });
+                $("#back").click(function(){
+                $("#2").fadeOut(1000);
+                $("#1").fadeIn(5000);
+                });
+                });
+        } 
+        function visiblepassword(){
+                var vp=document.getElementById("pass");
+                if(vp.type==="password")
+                {
+                    vp.type="text";
+                }
+                else
+                {
+                    vp.type="password";
+                }
+            }  
         </script>
     </head>
 <body>
@@ -101,33 +111,32 @@ p,h2
         <table align="center" cellpadding="15px" cellspacing="5px">
         <tr>
         <td>
-            <b>Full Name:</b><input type="text" id="name" name="name" pattern="[A-Z]{3,15}" required title="only capital letters" onkeyup="fullname()">
+            <b>Full Name:</b><input type="text" id="name" name="name"onkeyup="fullname()">
         </td>
         </tr>
         <tr>
         <td>
-            <b>Username:</b><input type="text" id="uname" name="uname" pattern="[A-Za-z0-9_]{3,15}" required title="alphanumeric and _ allowed" onkeyup="username()">
+            <b>Username:</b><input type="text" id="uname" name="uname" onkeyup="username()">
          </td>
         </tr>
         <tr>
         <td>
-            <b>Email:</b><input type="email" id="email" pattern="[a-z0-9]+@+[gmail.com]{5,25}" onkeyup="emailid()" required>
+            <b>Email:</b><input type="email" id="email" onkeyup="emailid()">
         </td>
         </tr>
         <tr>
         <td>
-            <b>Password:</b> <input type="password" id="pass" pattern="[A-Za-z0-9.!@#$%^&*~]{7,20}" title="alphanumeric and all symbols allowed" onkeyup="password()" required>
+            <b>Password:</b><input type="checkbox" onclick="visiblepassword()"> <input type="password" id="pass" onkeyup="password()" >
         </td>
         </tr>
         <tr>
         <td>
-        <b>Phone Number:</b> <input type="text" id="no" pattern="[6789][0-9]{9}" title="only numeric" required onkeyup="number()">
+        <b>Phone Number:</b> <input type="text" id="no" onkeyup="number()">
         </td>
         </tr>
       </table>
-       <button type="button" id="submit" onclick="show()">Submit</a></button>
+       <button type="button" id="submit" onclick="show()">Submit</button>
     </div>
-             
        <div id="2" style="display: none;">
         <h1 align="center">
             Your details are as follows

@@ -2,6 +2,7 @@
     <head>
         <title>login form</title> 
         <style>
+        
 div
         {
             margin:auto;
@@ -70,6 +71,33 @@ p,h2
             localStorage.setItem("no",no);
             nopattern.test(no)?document.getElementById("no").style.backgroundColor='white':document.getElementById("no").style.backgroundColor='red'
             }
+            function visiblepassword(){
+                var vp=document.getElementById("pass");
+                if(vp.type==="password")
+                {
+                    vp.type="text";
+                }
+                else
+                {
+                    vp.type="password";
+                }
+            }
+            function check(){
+            var name=document.getElementById("name").value;
+            var uname=document.getElementById("uname").value;
+            var email=document.getElementById("email").value;
+            var pass=document.getElementById("pass").value;
+            var no=document.getElementById("no").value; 
+                if(name==""||uname==""||email==""||pass==""||no=="")
+            {
+                alert("please enter all the details");
+            }
+            else
+            {
+                alert("your details are submitted successfully");
+            }
+            }
+            
         </script>
     </head>
 <body>
@@ -79,31 +107,33 @@ p,h2
         <table align="center" cellpadding="15px" cellspacing="5px">
         <tr>
         <td>
-            <b>Full Name:</b><input type="text" id="name" name="name" pattern="[A-Z]{3,15}" required title="only capital letters" onkeyup="fullname()">
+            <b>Full Name:</b><input type="text" id="name" name="name" onkeyup="fullname()">
         </td>
         </tr>
         <tr>
         <td>
-            <b>Username:</b><input type="text" id="uname" name="uname" pattern="[A-Za-z0-9_]{3,15}" required title="alphanumeric and _ allowed" onkeyup="username()">
+            <b>Username:</b><input type="text" id="uname" name="uname" onkeyup="username()">
          </td>
         </tr>
         <tr>
         <td>
-            <b>Email:</b><input type="email" id="email" pattern="[a-z0-9]+@+[gmail.com]{5,25}" onkeyup="emailid()" required>
+            <b>Email:</b><input type="email" id="email" onkeyup="emailid()">
         </td>
         </tr>
         <tr>
         <td>
-            <b>Password:</b> <input type="password" id="pass" pattern="[A-Za-z0-9.!@#$%^&*~]{7,20}" title="alphanumeric and all symbols allowed" onkeyup="password()" required>
+            <b>Password: 
+                <input type="checkbox" onclick="visiblepassword()">          
+            </b> <input type="password" id="pass" onkeyup="password()">
         </td>
         </tr>
         <tr>
         <td>
-        <b>Phone Number:</b> <input type="text" id="no" pattern="[6789][0-9]{9}" title="only numeric" required onkeyup="number()">
+        <b>Phone Number:</b> <input type="text" id="no" onkeyup="number()">
         </td>
         </tr>
       </table>
-       <button type="button" id="submit"><a href="aftersubmit1.html">Submit</a></button>
+       <button type="button" id="submit" onclick="check();"><a href="aftersubmit1.html">Submit</a></button>
     </div>
 </body>
 </html>
