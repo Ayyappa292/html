@@ -1,7 +1,8 @@
-for(i=1;i<5;i++)
-{
-  for(j=1;j<i;j++)
-    {
-console.log("&nbsp;"+i);
-    }
+aa = [];
+for (i = 0; i < 5; i++) {
+
+  for (j = 0; j <=i; j++) {
+       
+  }
+  console.log(i + "hi" + j);
 }

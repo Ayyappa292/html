@@ -12,6 +12,7 @@ if(_.lastIndexOf[sb[i]]=isNaN)
 if(_.lastIndexOf[sb[i]>sb[j]])
 {
 switch(sb[j],sb[i])
+{}
 console.log(sd);
 }
 }
